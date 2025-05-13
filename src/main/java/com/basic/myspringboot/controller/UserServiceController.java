@@ -19,7 +19,7 @@ public class UserServiceController {
 
     @PostMapping
     public ResponseEntity<UserDTO.UserResponse> create(@Valid @RequestBody
-                                           UserDTO.UserCreateRequest request) {
+                                                       UserDTO.UserCreateRequest request) {
         UserDTO.UserResponse createdUser = userService.createUser(request);
         return ResponseEntity.ok(createdUser);
     }
@@ -48,7 +48,7 @@ public class UserServiceController {
 
     @PatchMapping("/{email}")
     public ResponseEntity<UserDTO.UserResponse> updateUser(@PathVariable String email,
-                                           @Valid @RequestBody UserDTO.UserUpdateRequest useDetail){
+                                                           @Valid @RequestBody UserDTO.UserUpdateRequest useDetail){
 
         UserDTO.UserResponse updatedUser = userService.updateUserByEmail(email, useDetail);
         return ResponseEntity.ok(updatedUser);
